@@ -1,0 +1,29 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Heebo&family=Raleway:ital,wght@1,500&family=Roboto:ital,wght@0,100;0,300;1,400&family=Teko:wght@600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "heebo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+background-color: #fafafa;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+
+}
+
+h1,
+h2 {
+  font-family: "Barlow", sans-serif;
+@apply text-gray-800;
+}
+
+p {
+  line-height: 1.8;
+  @apply text-gray-600;
+} */

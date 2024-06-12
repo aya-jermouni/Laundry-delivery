@@ -1,0 +1,40 @@
+.about-container {
+    padding: 20px;
+    
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  
+    p {
+      margin-bottom: 15px;
+    }
+  
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  
+    .btn {
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      padding: 10px 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+      border-radius: 5px;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

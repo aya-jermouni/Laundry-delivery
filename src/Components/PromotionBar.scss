@@ -1,0 +1,14 @@
+// PromotionBar.scss
+.promotion-bar {
+    background-color: #9fd5ff; // Set your desired background color
+    color: #333; // Set your desired text color
+    text-align: center;
+    padding: 2px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  

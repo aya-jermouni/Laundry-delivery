@@ -1,0 +1,47 @@
+.items-scroller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.prev-button,
+.next-button {
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.prev-icon,
+.next-icon {
+  font-size: 20px;
+  color: #333;
+}
+
+.scrolling-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  width: 100%; /* Use 100% width for scrolling container */
+}
+
+.item-card {
+  flex: 0 0 auto; /* Let items take their natural width */
+  width: 300px;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .scrolling-container {
+    flex-wrap: nowrap; /* Ensure items stay in a row for smaller screens */
+    overflow: auto; /* Allow horizontal scrolling for smaller screens */
+  }
+
+  .item-card {
+    width: 50%; /* Set card width to 50% for smaller screens */
+  }
+}

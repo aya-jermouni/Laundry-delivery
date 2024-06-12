@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Markazi+Text:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family="ABeeZee":ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+.submit{
+    border: none;
+    border-radius: 2px;
+    background-color: #a9dac4;
+    padding: 12px 20px;
+    color: white;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    transition: all ease 240ms;
+    cursor: pointer;
+
+    &:hover {
+        background-color:#7bb99d;
+    }
+}
+.custom-card {
+    transition: all 0.3s ease;
+    background-color: transparent;
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .txt1{font-family:"Markazi Text";
+    font-size: 20px;
+    font-style: italic;}
+    .txt2{font-family:"ABeeZee";
+      font-size: 15px;
+      margin-bottom: 0px;
+   }
+   .step-card-container {
+    width: 70%; /* Adjust the width as needed */
+    margin-bottom: 20px; /* Adjust the space between cards */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .step-card {
+    width: 100%; /* Adjust the width as needed */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border: none !important; /* Remove border */
+    margin-bottom: 0px; /* Adjust the space between cards */
+    border-radius: 15px;
+  }

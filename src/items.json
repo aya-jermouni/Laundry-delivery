@@ -1,0 +1,47 @@
+[
+    {
+      "title": "CLEAN scent 1",
+      "description": "Elevate your laundry experience with Clean, a perfume that infuses a fresh, invigorating scent into every fiber.",
+      "imageUrl": "/images/products.png"
+    },
+    {
+      "title": "CLEAN scent 2",
+      "description": "Immerse your clothes in the refreshing embrace of Clean, a laundry perfume that leaves behind a trail of crisp cleanliness.",
+      "imageUrl": "/images/products.png"
+    },
+    {
+        "title": " CLEAN scent 3",
+        "description": "Unleash the essence of pure freshness with Clean, a signature fragrance designed to transform your laundry routine.",
+        "imageUrl": "/images/products.png"
+      },
+      {
+        "title": "CLEAN scent 4",
+        "description": "Indulge in the lingering scent of cleanliness with Clean, the perfect finishing touch for garments that deserve a touch of luxury.",
+        "imageUrl": "/images/products.png"
+      }, {
+        "title": "CLEAN scent 1",
+        "description": "Elevate your laundry experience with Clean, a perfume that infuses a fresh, invigorating scent into every fiber.",
+        "imageUrl": "/images/products.png"
+      },
+      {
+        "title": "CLEAN scent 2",
+        "description": "Immerse your clothes in the refreshing embrace of Clean, a laundry perfume that leaves behind a trail of crisp cleanliness.",
+        "imageUrl": "/images/products.png"
+      },
+      {
+          "title": " CLEAN scent 3",
+          "description": "Unleash the essence of pure freshness with Clean, a signature fragrance designed to transform your laundry routine.",
+          "imageUrl": "/images/products.png"
+        },
+        {
+          "title": "CLEAN scent 4",
+          "description": "Indulge in the lingering scent of cleanliness with Clean, the perfect finishing touch for garments that deserve a touch of luxury.",
+          "imageUrl": "/images/products.png"
+        }
+  ]
+  
+
+
+
+
+

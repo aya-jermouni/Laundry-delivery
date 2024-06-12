@@ -1,0 +1,70 @@
+/* About.css */
+
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .btn {
+    /* Add styling for your button here if needed */
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  /* styles.css */
+
+/* Overall container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Button styles */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  /* Header styles */
+  h2 {
+    color: #333;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 20px;
+  }
+  
+  /* Paragraph styles */
+  p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* List styles */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* List item styles */
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Link styles */
+  a {
+    color: #3498db;
+  }
+  
+  
+  
+  
