@@ -43,4 +43,54 @@ It simulates how a **real laundry delivery service** could accept online orders 
 ---
 
 ## 📂 Project Structure
+src/
+├── Components/
+│ ├── Order.js
+│ ├── OrderPage.js
+│ ├── OrderForm.js
+│ ├── OrderSuccess.js
+│ └── SharedUtils.js
+├── Style/
+│ ├── Order.css
+│ ├── OrderForm.css
+│ └── OrderSuccess.css
+└── App.js
 
+
+---
+
+## 🧪 How It Works
+
+1. User selects laundry items and quantities
+2. Items are added to the cart
+3. Total price updates automatically
+4. User fills in contact & address form
+5. Confirmation email is sent
+6. User is redirected to success page
+
+---
+
+## 📦 Installation & Run Locally
+
+```bash
+git clone https://github.com/aya-jermouni/Laundry-delivery.git
+cd Laundry-delivery
+npm install
+npm start
+
+📌 Future Improvements
+
+Admin dashboard for order management
+
+Online payment integration
+
+Order tracking system
+
+Multi-language support
+
+👩‍💻 Author
+
+Aya Jermouni
+Front-End / Full-Stack JavaScript Developer
+
+GitHub: https://github.com/aya-jermouni
