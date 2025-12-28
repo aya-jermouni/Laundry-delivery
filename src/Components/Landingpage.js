@@ -26,7 +26,7 @@ function Landingpage() {
                     </div>
                     <div className="submit-container">
                         <input type="submit" className="submit-btn"
-                            
+
                             value="Contact Us" />
                         <div className="submit-btn-shadow"> </div>
                     </div>
@@ -35,12 +35,14 @@ function Landingpage() {
             </div>
             <div className="image-container">
                 <img src="/images/landing3.png" alt="Oops!" style={{
-                    width: "800px",
+                    width: "700px",
                     height: "auto",
-                    margin: " 3px 3px",
-                    padding: "0px"
+                    margin: " 0px 3px",
+                    padding: "0px",
                 }} />
             </div>
+
+
         </div>
     );
 }

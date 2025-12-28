@@ -13,32 +13,32 @@ function ImgHeader() {
       <Carousel.Item>
         <div style={itemStyle}>
           <img
-            src="/images/products.png"
+            src="/images/p1.png"
             className="img-rounded mx-2"
             alt="First Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
           <img
-             src="/images/products.png"
+             src="/images/p2.png"
             className="img-rounded mx-2"
             alt="First Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
           <img
-        src="/images/products.png"
+        src="/images/p3.png"
             className="img-rounded mx-2"
             alt="First Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
           <img
-              src="/images/products.png"
+              src="/images/p4.png"
             className="img-rounded mx-2"
             alt="First Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
         </div>
         <Carousel.Caption className="text-center">
@@ -51,76 +51,38 @@ function ImgHeader() {
       <Carousel.Item>
         <div style={itemStyle}>
           <img
-              src="/images/products.png"
+              src="/images/p9.png"
             className="img-rounded mx-2"
             alt="Second Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
           <img
-             src="/images/products.png"
+             src="/images/p5.png"
             className="img-rounded mx-2"
             alt="Second Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
           <img
-            src="/images/products.png"
+            src="/images/p7.png"
             className="img-rounded mx-2"
             alt="Second Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
           <img
-             src="/images/products.png"
+             src="/images/p8.png"
             className="img-rounded mx-2"
             alt="Second Slide"
-            width="304"
-            height="236"
+            width="200"
+            height="200"
           />
         </div>
         <Carousel.Caption className="text-center">
           <div>
             {/* <h5>Smooth Sophistication</h5>
             <p>Ironing Elegance Into Every Fabric.</p> */}
-          </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div style={itemStyle}>
-          <img
-             src="/images/products.png"
-            className="img-rounded mx-2"
-            alt="Third Slide"
-            width="304"
-            height="236"
-          />
-          <img
-          src="/images/products.png"
-            className="img-rounded mx-2"
-            alt="Third Slide"
-            width="304"
-            height="236"
-          />
-          <img
-          src="/images/products.png"
-            className="img-rounded mx-2"
-            alt="Third Slide"
-            width="304"
-            height="236"
-          />
-          <img
-             src="/images/products.png"
-            className="img-rounded mx-2"
-            alt="Third Slide"
-            width="304"
-            height="236"
-          />
-        </div>
-        <Carousel.Caption className="text-center">
-          <div>
-            {/* <h5>Infuse Luxury into Every Thread</h5>
-            <p>Where Fragrance Meets Freshness in Every Wash.</p> */}
           </div>
         </Carousel.Caption>
       </Carousel.Item>

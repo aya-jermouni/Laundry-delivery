@@ -1,37 +1,58 @@
-// App.js
-import React from 'react';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Home from "./Components/Home";
-import './App.css'; // Import the CSS file for styling
-import Footer from './Components/Footer';
-import NavBar from './Components/NavBar';
-import ContactUs from "./Components/ContactUs"
+import Footer from "./Components/Footer";
+import NavBar from "./Components/NavBar";
+import About from "./Components/About";
+import ContactUs from "./Components/ContactUs";
 import DryCleaning from "./Components/DryCleaning";
 import SneakerCleaning from "./Components/SneakerCleaning";
 import PriceDetails from "./Components/PriceDetails";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './Components/About';
-// import ImgHeader from "./Components/ImgHeader";
-import Order from "./Components/Cards/Order";
-import OrderForm from './Components/Cards/OrderForm'
+
+import OrderPage from "./Components/Cards/OrderPage";
+import OrderForm from "./Components/Cards/OrderForm";
+import OrderSuccess from "./Components/Cards/OrderSuccess";
+
+import "./App.css";
 
 const App = () => {
+  // ✅ restore cart from localStorage
+  const [cart, setCart] = useState(() => {
+    const saved = localStorage.getItem("cart");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   return (
     <Router>
       <NavBar />
-      {/* <ImgHeader /> */}
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="dry-cleaning" element={<DryCleaning />} />
-        <Route path="sneaker-cleaning" element={<SneakerCleaning />} />
-        <Route path="price-details" element={<PriceDetails />} />
-        <Route path="contact-us" element={<ContactUs />} />
-        <Route path="order" element={<Order />} />
-        <Route path="orderForm" element={<OrderForm/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/dry-cleaning" element={<DryCleaning />} />
+        <Route path="/sneaker-cleaning" element={<SneakerCleaning />} />
+        <Route path="/price-details" element={<PriceDetails />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+
+        {/* ORDER FLOW */}
+        <Route
+          path="/order"
+          element={<OrderPage cart={cart} setCart={setCart} />}
+        />
+        <Route
+          path="/order-form"
+          element={<OrderForm cart={cart} />}
+        />
+        <Route
+          path="/order-success"
+          element={<OrderSuccess />}
+        />
       </Routes>
+
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;

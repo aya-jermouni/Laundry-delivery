@@ -1,7 +1,7 @@
 import React from "react";
 import { Container ,Row , Col } from "react-bootstrap";
 import Map from "./Map";
-// import ItemCard from './ItemCard';
+//import ItemCard from './ItemCard';
 import "./Style/Home.css"
 import ImgHeader from "./ImgHeader";
 
@@ -9,20 +9,6 @@ import Whychooseus from './Whychooseus';
 import Landingpage from './Landingpage'
 // import PromotionBar from './PromotionBar';
 function Home() {
-//   const [items, setItems] = useState([]);
-//  useEffect(() => {
-//     const fetchItems = async () => {
-//       try {
-//         const data = await import('../items.json');
-//         setItems(data.default);
-//       } catch (error) {
-//         console.error('Error loading items:', error);
-//       }
-//     };
-
-//     fetchItems();
-//   }, []);
-
   return (
     <div> 
       <Landingpage/>

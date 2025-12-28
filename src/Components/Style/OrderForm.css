@@ -1,0 +1,51 @@
+.order-form-wrapper {
+  min-height: 100vh;
+  background-image: url("/public/images/bg-confirmation.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay pour transparence */
+.order-form-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* Card du formulaire */
+.order-form-card {
+  position: relative;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Titre */
+.order-form-card h3 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Inputs */
+.order-form-card input,
+.order-form-card textarea {
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Total */
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-top: 16px;
+  font-weight: 600;
+}

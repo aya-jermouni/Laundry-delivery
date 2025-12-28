@@ -1,0 +1,17 @@
+.order-page {
+  padding: 60px 0;
+}
+
+/* Global layout inside Order component */
+.order-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .order-layout {
+    grid-template-columns: 1fr;
+  }
+}

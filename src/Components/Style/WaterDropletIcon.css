@@ -1,0 +1,50 @@
+.water-droplet {
+    position: relative;
+    width: 120px; /* Adjust as needed */
+    height: 160px; /* Adjust as needed */
+    background: #00aaff;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(45deg);
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 16px; /* Adjust as needed */
+    transition: transform 0.3s;
+}
+
+.water-droplet:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.water-droplet::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 35px; /* Adjust as needed */
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    background: inherit;
+    border-radius: 50%;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    transform: rotate(-45deg); /* Reverts the rotation for the content inside */
+}
+
+.service-name {
+    background: rgba(0, 0, 0, 0.5); /* Adds a background to make the text stand out */
+    padding: 5px 10px;
+    border-radius: 5px;
+}

@@ -16,7 +16,7 @@ function NavBar() {
                 Home
               </Link>
               <Link to="/about"   style={{color:"#2C3AD1"}} className="nav-link txt">
-                About
+               Services
               </Link>
               <NavDropdown title="How It Works"  id="basic-nav-dropdown">
                 <NavDropdown.Item as={Link} to="/dry-cleaning"  style={{color:"#2C3AD1"}} className="txt">

@@ -1,168 +1,145 @@
-//OrderForm.js
 import React, { useState } from "react";
+import { Container, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import PropTypes from "prop-types";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { calculateTotalCartPrice } from "./SharedUtils";
+import "../Style/OrderForm.css";
 
-const OrderForm = ({ cart, removeFromCart, calculateTotalPrice, calculateTotalCartPrice, handleSubmitOrder }) => {
+const OrderForm = ({ cart }) => {
+  const navigate = useNavigate();
+
+  // ✅ Fallback to localStorage
+  const effectiveCart =
+    cart && cart.length
+      ? cart
+      : JSON.parse(localStorage.getItem("cart")) || [];
+
+// ✅ Hooks FIRST
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    birthday: "",
-    location: "",
-    allergies: "",
-    addExtraCharge: false,
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    setFormData({ ...formData, [name]: checked });
-  };
+  // ✅ Guard AFTER hooks
+  if (!effectiveCart.length) {
+    return (
+      <Container className="mt-5 text-center">
+        <p>Your cart is empty.</p>
+        <Button variant="dark" onClick={() => navigate("/order")}>
+          Go back to order
+        </Button>
+      </Container>
+    );
+  }
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    // Perform any necessary actions with the form data
-    console.log("Form data submitted:", formData);
+
+    const orderDetails = effectiveCart
+      .map((item) => `${item.name} x ${item.quantity}`)
+      .join(", ");
+
+    emailjs
+      .send(
+        "service_bytj45r",
+        "template_5qxm6vb",
+        {
+          customer_name: formData.name,
+          customer_email: formData.email,
+          customer_phone: formData.phone,
+          customer_address: formData.address,
+          order_details: orderDetails,
+          total_price: calculateTotalCartPrice(effectiveCart).toFixed(2),
+        },
+        "CoezH3mFuCa-YKIme"
+      )
+      .then(() => {
+        localStorage.removeItem("cart");
+        navigate("/order-success");
+      })
+      .catch((error) => {
+        console.error("EmailJS ERROR:", error);
+        alert(error.text || "Failed to send confirmation email");
+      });
   };
 
   return (
-    <Container>
-      <Row>
-        <Col md={6}>
-          <h2>Order Form</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="firstName">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your first name"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
+    <div className="order-form-wrapper">
+      <div className="order-form-card">
+        <h3>Order Confirmation</h3>
 
-            <Form.Group controlId="lastName">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your last name"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
+        <Form onSubmit={sendEmail}>
+          <Form.Group className="mb-3">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              name="name"
+              placeholder="Your full name"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="phoneNumber">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
-                type="tel"
-                placeholder="Enter your phone number"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="birthday">
-              <Form.Label>Birthday</Form.Label>
-              <Form.Control
-                type="date"
-                name="birthday"
-                value={formData.birthday}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Phone</Form.Label>
+            <Form.Control
+              name="phone"
+              placeholder="+212 ..."
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="location">
-              <Form.Label>Location</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your location"
-                name="location"
-                value={formData.location}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Address</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              name="address"
+              placeholder="Pickup & delivery address"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="allergies">
-              <Form.Label>Allergies</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Enter any allergies (if applicable)"
-                name="allergies"
-                value={formData.allergies}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="addExtraCharge">
-              <Form.Check
-                type="checkbox"
-                label="Add 15 DH for extra charge"
-                name="addExtraCharge"
-                checked={formData.addExtraCharge}
-                onChange={handleCheckboxChange}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Submit Order
-            </Button>
-          </Form>
-        </Col>
-
-    
-        <Col md={6}>
-          <h2>Selected Items</h2>
-          {cart.map((item, index) => (
-            <div key={index}>
-              <p>{item.product.name}</p>
-              <p>Quantity: {item.quantity}</p>
-              <h6>
-                Total Price:{" "}
-                {item.quantity * calculateTotalPrice(item.product, item.serviceTypes)} DH
-              </h6>
-              <p>Service Types: {item.serviceTypes.join(", ")}</p>
-              <Button variant="danger" onClick={() => removeFromCart(index)}>
-                Remove
-              </Button>
-              <hr />
-            </div>
-          ))}
-
-          <div className="card mb-4">
-            <div className="card-body">
-              <h5 className="card-title">Total Cart Price</h5>
-              <p className="card-text">Total: ${calculateTotalCartPrice(cart)}</p>
-              <Button variant="primary" onClick={handleSubmitOrder}>
-                Submit Order
-              </Button>
-            </div>
+          <div className="order-total">
+            <span>Total</span>
+            <span>
+              ${calculateTotalCartPrice(effectiveCart).toFixed(2)}
+            </span>
           </div>
-        </Col>
-      </Row>
-    </Container>
+
+          <Button
+            type="submit"
+            variant="dark"
+            className="w-100 mt-4"
+          >
+            Confirm Order
+          </Button>
+        </Form>
+      </div>
+    </div>
   );
-};
+}; // ✅ THIS WAS MISSING
 
 OrderForm.propTypes = {
   cart: PropTypes.array.isRequired,
-  removeFromCart: PropTypes.func.isRequired,
-  calculateTotalPrice: PropTypes.func.isRequired,
-  calculateTotalCartPrice: PropTypes.func.isRequired,
-  handleSubmitOrder: PropTypes.func.isRequired,
 };
 
 export default OrderForm;
